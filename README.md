@@ -24,11 +24,10 @@ A simple, responsive task management application built using React.js. Users can
 ## Screenshots
 
 ### Todo List
-![Todo List Screenshot](screenshots/todo-list.png)
+![Todo List](screenshots/todo-list.png)
 
 ### Completed Tasks
-![Completed Tasks Screenshot](screenshots/completed-tasks.png)
-
+![Completed Tasks](screenshots/completed-tasks.png)
 ## Getting Started
 
 ### Prerequisites
