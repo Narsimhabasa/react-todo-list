@@ -1,38 +1,184 @@
-.App {
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f1e1e;
+  color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
   text-align: center;
+  margin-top: 40px;
+  font-size: 36px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Main Todo Container */
+.todo-wrapper {
+  background: #353434;
+  padding: 2%;
+  width: fit-content;
+  min-width: 800px;
+  max-width: 95%;
+  margin: 50px auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0px 5px 7px rgb(27, 27, 27);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Input Section */
+.todo-input {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-bottom: 1px solid rgb(78, 78, 78);
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+}
+
+.todo-input-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+}
+
+.todo-input-item label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input {
+  padding: 10px;
+  border: none;
+  width: 300px;
+  font-size: 14px;
+}
+
+.todo-input-item input:focus {
+  outline: 2px solid rgb(0, 230, 122);
+}
+
+/* Add Button */
+.primaryBtn {
+  background-color: rgb(0, 230, 122);
   color: white;
+  border: none;
+  border-radius: 0;
+  margin-top: 28px;
+  padding: 12px;
+  width: 70px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.primaryBtn:hover {
+  background-color: rgb(0, 196, 104);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Todo / Completed Buttons */
+.secondaryBtn {
+  background-color: rgb(71, 71, 71);
+  color: white;
+  border: none;
+  border-radius: 0;
+  padding: 12px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgb(0, 230, 122);
+}
+
+.btn-area {
+  margin-bottom: 20px;
+}
+
+/* Todo List */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual Todo Item */
+.todo-list-item {
+  background-color: #414040;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 5px rgb(43, 42, 42);
+}
+
+/* Task Title */
+.todo-list-item h3 {
+  font-size: 25px;
+  color: rgb(0, 230, 122);
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Task Description */
+.todo-list-item p {
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+/* Icons Container */
+.todo-list-item .icon-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Delete Icon */
+.icon {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: red;
+}
+
+/* Complete Icon */
+.check-icon {
+  font-size: 25px;
+  color: rgb(0, 230, 122);
+  cursor: pointer;
+}
+
+.check-icon:hover {
+  color: rgb(4, 196, 106);
+}
+
+/* Small Screens */
+@media (max-width: 850px) {
+  .todo-wrapper {
+    min-width: 0;
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .todo-input {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .todo-input-item {
+    margin-right: 0;
+  }
+
+  .todo-input-item input {
+    max-width: 100%;
+  }
+
+  .todo-list-item {
+    padding: 20px;
   }
 }
